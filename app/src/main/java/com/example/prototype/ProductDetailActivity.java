@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.prototype.models.Extras;
+import com.example.prototype.models.PizzaModel;
 import com.fxn.stash.Stash;
 import com.google.android.material.checkbox.MaterialCheckBox;
 
@@ -71,10 +73,11 @@ public class ProductDetailActivity extends AppCompatActivity {
         pizzaModels = new ArrayList<>();
 
         pizzaModels = Stash.getArrayList("Pizza", PizzaModel.class);
+        cart = Stash.getArrayList("cart", PizzaModel.class);
 
-        pizzaImage.setImageResource(pizzaModels.get(pos).image);
-        name.setText(pizzaModels.get(pos).name);
-        curPrice = pizzaModels.get(pos).price;
+        pizzaImage.setImageResource(pizzaModels.get(pos).getImage());
+        name.setText(pizzaModels.get(pos).getName());
+        curPrice = pizzaModels.get(pos).getPrice();
         price = curPrice;
         priceTv.setText(curPrice + "");
 
@@ -104,7 +107,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
 
         addToCart.setOnClickListener(v -> {
-
+            cart.add(new PizzaModel(pizzaModels.get(pos).getImage(), pizzaModels.get(pos).getName(), price, extras, quantity));
+            Stash.put("cart", cart);
         });
 
     }
@@ -238,23 +242,25 @@ public class ProductDetailActivity extends AppCompatActivity {
         if (b){
             if (pos < 5){
                 pos++;
-                pizzaImage.setImageResource(pizzaModels.get(pos).image);
-                name.setText(pizzaModels.get(pos).name);
-                curPrice = pizzaModels.get(pos).price;
+                pizzaImage.setImageResource(pizzaModels.get(pos).getImage());
+                name.setText(pizzaModels.get(pos).getName());
+                curPrice = pizzaModels.get(pos).getPrice();
                 price = curPrice;
                 priceTv.setText(curPrice + "");
                 quantity = 1;
                 quant.setText(quantity + "");
+                extras.clear();
             }
         } else {
             if (pos>0) {
                 pos--;
-                pizzaImage.setImageResource(pizzaModels.get(pos).image);
-                name.setText(pizzaModels.get(pos).name);
-                curPrice = pizzaModels.get(pos).price;
+                pizzaImage.setImageResource(pizzaModels.get(pos).getImage());
+                name.setText(pizzaModels.get(pos).getName());
+                curPrice = pizzaModels.get(pos).getPrice();
                 price = curPrice;
                 priceTv.setText(curPrice + "");
                 quantity = 1;
+                extras.clear();
                 quant.setText(quantity + "");
             }
         }

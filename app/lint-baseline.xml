@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.2" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.2)" variant="fatal" version="7.2.2">
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`password_toggle`&quot; is not defined anywhere."
+        errorLine1="        app:layout_constraintTop_toBottomOf=&quot;@+id/password_toggle&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="137"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`textView`&quot; is not defined anywhere. Did you mean one of {textView3, textView4} ?"
+        errorLine1="                app:layout_constraintStart_toEndOf=&quot;@+id/textView&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="76"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`editTextPasssword`&quot; is not defined anywhere."
+        errorLine1="        app:layout_constraintTop_toBottomOf=&quot;@+id/editTextPasssword&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signin.xml"
+            line="132"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textTrack` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                            android:layout_below=&quot;@+id/textTrack&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="325"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/buttonRegister` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="        app:layout_constraintTop_toBottomOf=&quot;@+id/buttonRegister&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signin.xml"
+            line="102"
+            column="9"/>
+    </issue>
+
+</issues>

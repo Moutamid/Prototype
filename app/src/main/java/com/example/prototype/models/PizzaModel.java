@@ -1,4 +1,6 @@
-package com.example.prototype;
+package com.example.prototype.models;
+
+import com.example.prototype.models.Extras;
 
 import java.util.ArrayList;
 
@@ -7,12 +9,29 @@ public class PizzaModel {
     String name;
     double price;
     ArrayList<Extras> extras;
+    int quantity;
 
     public PizzaModel(int image, String name, double price, ArrayList<Extras> extras) {
         this.image = image;
         this.name = name;
         this.price = price;
         this.extras = extras;
+    }
+
+    public PizzaModel(int image, String name, double price, ArrayList<Extras> extras, int quantity) {
+        this.image = image;
+        this.name = name;
+        this.price = price;
+        this.extras = extras;
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getImage() {
