@@ -59,14 +59,20 @@
                         android:layout_marginEnd="8sp"
                         android:src="@drawable/magnifying_glass" />
 
-                    <ImageView
-                        android:id="@+id/bag"
-                        android:layout_width="28sp"
-                        android:layout_height="28sp"
-                        app:tint="@color/orange"
-                        android:backgroundTint="@color/white"
-                        android:src="@drawable/shopping_bag"
-                        android:layout_alignParentRight="true" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <ImageView
+                            android:id="@+id/bag"
+                            android:layout_width="28sp"
+                            android:layout_height="28sp"
+                            app:tint="@color/orange"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/shopping_bag" />
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
